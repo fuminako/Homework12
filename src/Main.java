@@ -5,8 +5,19 @@ public class Main {
         Book firstBook = new Book(firstAuthor, "1984", 2014);
         Book secondBook = new Book(secondAuthor, "Песнь Льда и Огня", 1996);
         secondBook.setPublishingYear(2018);
-        System.out.println(firstBook.getAuthor() + ": " + firstBook.getBookName() + ": " + firstBook.getPublishingYear());
-        System.out.println(secondBook.getAuthor() + ": " + secondBook.getBookName() + ": " + secondBook.getPublishingYear());
-    }
 
+        Book[] book = new Book[5];
+        book[0] = firstBook;
+        for(int i = 0; i<book.length; i++) {
+            if (book[i] == null) {
+                book[i] = secondBook;
+                break;
+            }
+        }
+        for (int i = 0; i<book.length; i++) {
+            if (book[i] != null) {
+                System.out.println(book[i]);
+            }
+        }
+    }
 }
